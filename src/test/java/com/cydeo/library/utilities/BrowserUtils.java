@@ -1,7 +1,13 @@
 package com.cydeo.library.utilities;
 
+import com.cydeo.library.POM.BasePage;
+import com.cydeo.library.POM.LandingPage;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
@@ -20,6 +26,13 @@ public class BrowserUtils {
         }catch (InterruptedException e ) {
 
         }
+    }
+    public static List<String> getElementText (List<WebElement> list){
+        List<String> elemTexts = new ArrayList<>();
+        for (WebElement element : list) {
+            elemTexts.add(element.getText());
+        }
+        return elemTexts;
     }
 
     /*
@@ -86,4 +99,32 @@ public class BrowserUtils {
         }
         return actualOptionsAsString;
     }
+
+    Waiter waiter = new Waiter(Driver.getDriver());
+    LandingPage landingPage =new LandingPage();
+    /**
+     * Clicks an item identified by its name (String) among a list (WebElements)
+     * @param driver : WebDriver
+     * @param waiter : Waiter
+     * @param wl : list of web elements
+     * @param name : string identifying the item
+     */
+    public static void clickItem(WebDriver driver, Waiter waiter, List<WebElement> wl, String name){
+        Actions a = new Actions(driver);
+        a.moveToElement(wl.get(0)).perform();
+        for (int i = 0; i < wl.size(); i++){
+            waiter.fluentWaitForElement(wl.get(i));
+            a.moveToElement(wl.get(i)).perform();
+            if (wl.get(i).getText().equals(name)){
+                wl.get(i).click();
+                break;
+            }
+        }}
+        @When("user clicks the {string} module")
+        public void user_clicks_the_module(String module) {
+
+            clickItem(Driver.getDriver(), waiter, landingPage.libraryMainModuleLink, module);
+        }
+
 }
+
