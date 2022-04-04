@@ -7,5 +7,4 @@ public class UsersTableStepDefs {
     public void table_should_have_following_column_name() {
 
     }
-
 }
