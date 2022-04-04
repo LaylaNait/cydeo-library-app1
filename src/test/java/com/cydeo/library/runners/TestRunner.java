@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = "html:target/cucumber-reports.html",
+        plugin = "html:target/cucumber-reports.html"
+        ,
         features = "src/test/resources/features",
         glue = "com/cydeo/library/step_definitions",
-        dryRun = false,
-        tags = "@Regression"
+        dryRun = false
+        //tags = "@Regression"
 )
 public class TestRunner {
 }

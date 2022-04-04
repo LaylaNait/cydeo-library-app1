@@ -9,12 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-    public WebDriver driver;
+public class LoginPage extends  BasePage{
     Waiter waiter = new Waiter(Driver.getDriver());
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

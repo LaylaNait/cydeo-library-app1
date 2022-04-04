@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PageNavigationsStepDefs {
-    LoginPage loginPage = new LoginPage(Driver.getDriver());
+    LoginPage loginPage = new LoginPage();
     LandingPage landingPage   = new LandingPage();
     Waiter waiter = new Waiter(Driver.getDriver());
     Select select;

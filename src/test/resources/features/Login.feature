@@ -1,5 +1,4 @@
-@Regression
-Feature:  Library app login feature
+Feature:  Library app login feature in environment 1
   Scenario: Login as librarian
     Given user is on the login page
     When user enters librarian username

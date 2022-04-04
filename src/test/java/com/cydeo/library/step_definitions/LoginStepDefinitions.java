@@ -12,12 +12,12 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class LoginStepDefinitions {
-    LoginPage loginPage = new LoginPage(Driver.getDriver());
+    LoginPage loginPage = new LoginPage();
     Waiter waiter = new Waiter(Driver.getDriver());
     LandingPage landingPage = new LandingPage();
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
     }
     @When("user enters librarian username")
     public void user_enters_librarian_username() {
