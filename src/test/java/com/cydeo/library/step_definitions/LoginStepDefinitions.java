@@ -2,6 +2,7 @@ package com.cydeo.library.step_definitions;
 
 import com.cydeo.library.POM.LandingPage;
 import com.cydeo.library.POM.LoginPage;
+import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import com.cydeo.library.utilities.Waiter;
@@ -74,6 +75,7 @@ public class LoginStepDefinitions {
     String expected = String.valueOf(expectedUsersNumber);
     String actual = landingPage.userCount.getText();
         System.out.println("actual = " + actual);
+        BrowserUtils.sleep(3);
         Assert.assertEquals(actual, expected);
     }
 
