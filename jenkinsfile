@@ -1,17 +1,11 @@
-node {
-    stage('Clone code') {
+node{
+    stage('clone'){
         git 'https://github.com/BadamkhandB/cydeo-library-app.git'
     }
-        
-    stage('Run tests'){
-        if(isUnix()){
-            sh "mvn clean test"
-        } else {
-            bat "mvn clean test"
-        }
+    stage('run'){
+        bat "mvn clean test"
     }
-        
-    stage('Generate report'){
-           cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+    stage('report'){
+        cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
     }
 }
