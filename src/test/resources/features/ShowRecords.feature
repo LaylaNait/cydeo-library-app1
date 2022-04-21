@@ -1,4 +1,4 @@
-@smoke
+@regression
 Feature: Show records functionality
   Scenario: verity default values in Users page
     Given user is on the login page

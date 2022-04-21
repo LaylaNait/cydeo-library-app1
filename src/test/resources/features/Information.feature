@@ -1,3 +1,4 @@
+@regression
 Feature: files for Task6:
   Scenario Outline: Verify user information
     Given user is on the login page in "env2"
@@ -5,7 +6,6 @@ Feature: files for Task6:
     Then account holder name should be "<name>"
 
  #TEST DATA for library2.env
-    @students
     Examples:
       | email             | password | name            |
       | student27@library | E1uZrsAu | Test Student 27 |

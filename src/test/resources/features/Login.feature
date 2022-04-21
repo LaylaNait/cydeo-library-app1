@@ -1,4 +1,4 @@
-@smoke
+@regression
 Feature:  Library app login feature in environment 1
   Scenario: Login as librarian
     Given user is on the login page
