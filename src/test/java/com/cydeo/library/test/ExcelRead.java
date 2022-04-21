@@ -44,6 +44,5 @@ public class ExcelRead {
                 System.out.println("Helen's Job ID is "+sheet.getRow(rowNum).getCell(2));
             }
         }
-
     }
 }
