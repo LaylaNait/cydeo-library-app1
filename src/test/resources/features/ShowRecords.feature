@@ -1,5 +1,5 @@
+@smoke
 Feature: Show records functionality
-  @smoke
   Scenario: verity default values in Users page
     Given user is on the login page
     And user enters librarian "librarian4@library" and "7jrGZdaV"
